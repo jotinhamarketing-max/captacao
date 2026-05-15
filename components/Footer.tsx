@@ -48,7 +48,7 @@ export default function Footer() {
               Transformamos tráfego em vendas previsíveis para empresas que querem crescer de verdade.
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 18 }}>
-              <SocialIcon kind="instagram" href="https://instagram.com/euojaovitorr" />
+              <SocialIcon kind="instagram" href="https://instagram.com/euojoaovitorr" />
               <SocialIcon kind="linkedin" href="https://linkedin.com" />
               <SocialIcon kind="whatsapp" href="https://wa.me/5592991220748" />
             </div>

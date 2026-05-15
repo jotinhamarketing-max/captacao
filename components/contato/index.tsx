@@ -293,7 +293,7 @@ export function ContatoLayout() {
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
               <ChannelRow kind="whatsapp" title="WhatsApp" value="(92) 99122-0748" hint="Resposta rápida · seg–sex 9h às 19h" href="https://wa.me/5592991220748" />
               <ChannelRow kind="email" title="E-mail" value="contato@dfcompany.com.br" hint="Respondemos em até 4h úteis" href="mailto:contato@dfcompany.com.br" />
-              <ChannelRow kind="instagram" title="Instagram" value="@euojaovitorr" hint="Siga para conteúdo de tráfego pago" href="https://instagram.com/euojaovitorr" />
+              <ChannelRow kind="instagram" title="Instagram" value="@euojoaovitorr" hint="Siga para conteúdo de tráfego pago" href="https://instagram.com/euojoaovitorr" />
               <ChannelRow kind="pin" title="Escritório" value="Florianópolis, SC — Brasil" hint="Reuniões presenciais sob agendamento" />
             </div>
 
