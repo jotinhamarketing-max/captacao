@@ -132,7 +132,7 @@ function ContactForm() {
         </div>
         <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 600, color: "var(--fg)", margin: "0 0 12px", textTransform: "uppercase" }}>Recebemos sua mensagem</h3>
         <p style={{ fontSize: 15.5, marginBottom: 28, maxWidth: 420, marginInline: "auto", color: "var(--fg-2)", lineHeight: 1.6 }}>
-          Em até <strong style={{ color: "#fff" }}>30 minutos</strong>, alguém do time DF COMPANY entra em contato para agendar seu diagnóstico estratégico.
+          Em até <strong style={{ color: "#fff" }}>2h úteis</strong>, alguém do time DF COMPANY entra em contato para agendar seu diagnóstico estratégico.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
           <PrimaryButton size="md" href="https://wa.me/5592991220748">FALAR AGORA NO WHATSAPP</PrimaryButton>
@@ -281,7 +281,7 @@ export function ContatoLayout() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.05fr", gap: 56, alignItems: "start" }} className="stack-md">
           <div className="cl-left cl-order-2">
             <span className="chip" style={{ marginBottom: 22, display: "inline-flex" }}>
-              <span className="dot" /> Resposta em até 30 minutos
+              <span className="dot" /> Resposta em até 2h úteis
             </span>
             <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "clamp(36px, 5.4vw, 64px)", lineHeight: 1.02, letterSpacing: "-0.025em", margin: "0 0 22px", textTransform: "uppercase", color: "var(--fg)" }}>
               Vamos falar de <span className="cm-emph" style={{ color: "var(--accent)" }}>crescimento</span>
@@ -293,7 +293,7 @@ export function ContatoLayout() {
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
               <ChannelRow kind="whatsapp" title="WhatsApp" value="(92) 99122-0748" hint="Resposta rápida · seg–sex 9h às 19h" href="https://wa.me/5592991220748" />
               <ChannelRow kind="email" title="E-mail" value="contato@dfcompany.com.br" hint="Respondemos em até 4h úteis" href="mailto:contato@dfcompany.com.br" />
-              <ChannelRow kind="instagram" title="Instagram" value="@euojoaovitorr" hint="Siga para conteúdo de tráfego pago" href="https://instagram.com/euojoaovitorr" />
+              <ChannelRow kind="instagram" title="Instagram" value="@euojaovitorr" hint="Siga para conteúdo de tráfego pago" href="https://instagram.com/euojaovitorr" />
               <ChannelRow kind="pin" title="Escritório" value="Florianópolis, SC — Brasil" hint="Reuniões presenciais sob agendamento" />
             </div>
 
@@ -303,7 +303,7 @@ export function ContatoLayout() {
               </span>
               <div style={{ flex: 1, lineHeight: 1.3 }}>
                 <div style={{ color: "#fff", fontSize: 14, fontWeight: 600 }}>Atendimento direto com o time</div>
-                <div style={{ color: "var(--fg-muted)", fontSize: 12.5 }}>João Vitor e DF COMPANY · resposta em até 30 minutos</div>
+                <div style={{ color: "var(--fg-muted)", fontSize: 12.5 }}>João Vitor e DF COMPANY · resposta em até 2h úteis</div>
               </div>
               <span style={{ width: 10, height: 10, borderRadius: 999, background: "#2fb46a", boxShadow: "0 0 10px #2fb46a" }} />
             </div>
@@ -340,7 +340,7 @@ export function ContatoFAQ() {
 
         <div className="cfaq-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}>
           {[
-            { q: "Em quanto tempo recebo retorno?", a: "Resposta em até 30 minutos pelo time DF COMPANY (segunda a sexta, 9h–19h). Para casos urgentes, chame no WhatsApp." },
+            { q: "Em quanto tempo recebo retorno?", a: "Resposta em até 2h úteis pelo time DF COMPANY (segunda a sexta, 9h–19h). Para casos urgentes, chame no WhatsApp." },
             { q: "Preciso de orçamento mínimo?", a: "Trabalhamos com empresas a partir de R$ 5k/mês em mídia. Acima disso, montamos um plano sob medida." },
             { q: "O diagnóstico é cobrado?", a: "Não. A primeira reunião de 30 minutos é gratuita. Você sai com um mapa claro do que precisa para crescer." },
           ].map((it, i) => (

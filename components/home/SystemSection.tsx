@@ -76,9 +76,9 @@ export default function SystemSection() {
               João Vitor lidera um time focado em performance, suporte próximo e crescimento real.
             </p>
             <div className="sys-stats" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginBottom: 28 }}>
-              <BigStat value="5+" label="anos no mercado" />
+              <BigStat value="5 anos" label="no mercado" />
               <BigStat value="R$ 10M" label="em vendas geradas" />
-              <BigStat value="3+ anos" label="clientes ativos" />
+              <BigStat value="3 anos" label="clientes ativos" />
             </div>
             <p style={{ fontSize: 16, color: "var(--fg-1)", borderLeft: "2px solid var(--accent)", paddingLeft: 16, margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
               Porque resultado não vem só do anúncio. Vem da estratégia completa.

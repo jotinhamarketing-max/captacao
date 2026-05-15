@@ -1,9 +1,17 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { sendCAPIEvent, buildLeadEvent } from "@/lib/meta-capi";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0].trim()
+    ?? req.headers.get("x-real-ip")
+    ?? undefined;
+  const userAgent = req.headers.get("user-agent") ?? undefined;
+  const fbc  = req.headers.get("cookie")?.match(/_fbc=([^;]+)/)?.[1];
+  const fbp  = req.headers.get("cookie")?.match(/_fbp=([^;]+)/)?.[1];
+
   const body = await req.json();
   const { nome, empresa, email, telefone, faturamento, investimento, servicos, orcamento, urgencia } = body;
 
@@ -46,6 +54,18 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
+
+  // Fire Meta CAPI Lead event (non-blocking)
+  sendCAPIEvent(buildLeadEvent({
+    email,
+    phone: telefone,
+    name: nome,
+    url: "https://dfcompany.com.br/contato",
+    ip,
+    userAgent,
+    fbc: fbc ?? undefined,
+    fbp: fbp ?? undefined,
+  }));
 
   return NextResponse.json({ ok: true });
 }
