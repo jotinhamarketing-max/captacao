@@ -16,12 +16,12 @@ const CHANNEL_ICONS = {
   instagram: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>,
 };
 
-function ChannelRow({ kind, title, value, hint, href }: { kind: keyof typeof CHANNEL_ICONS; title: string; value: string; hint: string; href?: string }) {
+function ChannelRow({ kind, title, value, hint, href, onClick }: { kind: keyof typeof CHANNEL_ICONS; title: string; value: string; hint: string; href?: string; onClick?: () => void }) {
   const [hover, setHover] = useState(false);
   const Comp = href ? "a" : "div";
   return (
     <Comp
-      {...(href ? { href, target: kind === "whatsapp" ? "_blank" : undefined, rel: "noreferrer" } : {})}
+      {...(href ? { href, target: kind === "whatsapp" ? "_blank" : undefined, rel: "noreferrer", onClick } : {})}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -116,6 +116,9 @@ function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Erro ao enviar");
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "CompleteRegistration");
+      }
       setSubmitted(true);
     } catch {
       setSendError("Não foi possível enviar. Tente pelo WhatsApp.");
@@ -135,7 +138,7 @@ function ContactForm() {
           Em até <strong style={{ color: "#fff" }}>2h úteis</strong>, alguém do time DF COMPANY entra em contato para agendar seu diagnóstico estratégico.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: 10, flexWrap: "wrap" }}>
-          <PrimaryButton size="md" href="https://wa.me/5592991220748">FALAR AGORA NO WHATSAPP</PrimaryButton>
+          <PrimaryButton size="md" href="https://wa.me/5592991220748" onClick={() => (window as any).fbq?.("track", "Contact")}>FALAR AGORA NO WHATSAPP</PrimaryButton>
         </div>
       </Card>
     );
@@ -291,7 +294,7 @@ export function ContatoLayout() {
             </p>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 36 }}>
-              <ChannelRow kind="whatsapp" title="WhatsApp" value="(92) 99122-0748" hint="Resposta rápida · seg–sex 9h às 19h" href="https://wa.me/5592991220748" />
+              <ChannelRow kind="whatsapp" title="WhatsApp" value="(92) 99122-0748" hint="Resposta rápida · seg–sex 9h às 19h" href="https://wa.me/5592991220748" onClick={() => (window as any).fbq?.("track", "Contact")} />
               <ChannelRow kind="email" title="E-mail" value="contato@dfcompany.com.br" hint="Respondemos em até 4h úteis" href="mailto:contato@dfcompany.com.br" />
               <ChannelRow kind="instagram" title="Instagram" value="@euojoaovitorr" hint="Siga para conteúdo de tráfego pago" href="https://instagram.com/euojoaovitorr" />
               <ChannelRow kind="pin" title="Escritório" value="Florianópolis, SC — Brasil" hint="Reuniões presenciais sob agendamento" />

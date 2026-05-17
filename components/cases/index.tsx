@@ -279,7 +279,7 @@ export function CasesCTA() {
           </p>
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: 12 }}>
             <PrimaryButton size="lg" href="/contato">AGENDAR DIAGNÓSTICO</PrimaryButton>
-            <GhostButton size="lg" href="https://wa.me/5511999999999">Chamar no WhatsApp</GhostButton>
+            <GhostButton size="lg" href="https://wa.me/5592991220748" onClick={() => (window as any).fbq?.("track", "Contact")}>Chamar no WhatsApp</GhostButton>
           </div>
         </div>
       </div>

@@ -86,7 +86,7 @@ export function PrimaryButton({
   };
 
   if (href) return (
-    <a href={href} style={style} {...handlers}><span>{children}</span><BtnChip s={s}>{innerIcon}</BtnChip></a>
+    <a href={href} onClick={onClick} style={style} {...handlers}><span>{children}</span><BtnChip s={s}>{innerIcon}</BtnChip></a>
   );
   return (
     <button type={type} onClick={onClick} style={style} {...handlers}><span>{children}</span><BtnChip s={s}>{innerIcon}</BtnChip></button>
@@ -119,7 +119,7 @@ export function GhostButton({ children, href, onClick, size = "md" }: {
     transition: "background var(--dur-fast) var(--ease-out)",
   };
   const handlers = { onMouseEnter: () => setHover(true), onMouseLeave: () => setHover(false) };
-  if (href) return <a href={href} style={style} {...handlers}>{children}</a>;
+  if (href) return <a href={href} onClick={onClick} style={style} {...handlers}>{children}</a>;
   return <button type="button" onClick={onClick} style={style} {...handlers}>{children}</button>;
 }
 

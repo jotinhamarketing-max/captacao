@@ -83,7 +83,7 @@ export default function Hero() {
 
             <div className="hero-btns" style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 36 }}>
               <PrimaryButton size="md" href="/contato">AGENDAR DIAGNÓSTICO</PrimaryButton>
-              <GhostButton size="lg" href="https://wa.me/5511999999999">
+              <GhostButton size="lg" href="https://wa.me/5592991220748" onClick={() => (window as any).fbq?.("track", "Contact")}>
                 <svg width="14" height="14" viewBox="0 0 32 32" fill="#25d366">
                   <path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.5L3 29l6.7-1.7c1.9 1 4 1.6 6.3 1.6 7.2 0 13-5.8 13-13S23.2 3 16 3z"/>
                 </svg>

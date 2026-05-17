@@ -47,7 +47,7 @@ export default function ScaleCTA() {
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 18 }}>
               <PrimaryButton size="md" href="/contato">AGENDAR REUNIÃO</PrimaryButton>
-              <GhostButton size="lg" href="https://wa.me/5511999999999">Chamar no WhatsApp</GhostButton>
+              <GhostButton size="lg" href="https://wa.me/5592991220748" onClick={() => (window as any).fbq?.("track", "Contact")}>Chamar no WhatsApp</GhostButton>
             </div>
             <p style={{ color: "var(--fg-muted)", fontSize: 14, margin: 0 }}>
               Diagnóstico personalizado com o time DF COMPANY.
